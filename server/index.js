@@ -34,7 +34,7 @@ app.all("/reservations/:restaurantId", function(req, res) {
   apiProxy.web(req, res, {target: serverOne});
 });
 
-app.all("/menu/:restaurantId", function(req, res) {
+app.all("/menuData/:restaurantId", function(req, res) {
   console.log('redirecting to Server2');
   apiProxy.web(req, res, {target: serverTwo});
 });
