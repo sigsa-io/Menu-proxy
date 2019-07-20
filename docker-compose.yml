@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  menu:
+    # image: cminho921/sigsa.io:menu
+    build: .
+    ports:
+      - '3006:3006'

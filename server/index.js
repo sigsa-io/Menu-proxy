@@ -3,9 +3,9 @@ const path = require('path');
 const app = express();
 const httpProxy = require('http-proxy');
 const apiProxy = httpProxy.createProxyServer();
-const serverOne = 'http://localhost:3000';
-const serverTwo = 'http://localhost:3002';
-const serverThree = 'http://localhost:3004';
+const serverOne = 'http://ec2-52-15-204-30.us-east-2.compute.amazonaws.com:3003/';
+const serverTwo = 'http://ec2-18-224-190-236.us-east-2.compute.amazonaws.com:8080/';
+const serverThree = 'http://ec2-54-234-229-23.compute-1.amazonaws.com:3004/';
 
 app.use('/:restaurantId', express.static(path.resolve(__dirname, '..', 'client', 'dist')));
 
@@ -44,4 +44,4 @@ app.all("/restaurants/:restaurantId/reviews", function(req, res) {
   apiProxy.web(req, res, {target: serverThree});
 });
 
-app.listen(3001);
+app.listen(3006);
